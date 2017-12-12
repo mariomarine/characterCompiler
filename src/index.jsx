@@ -10,37 +10,8 @@ const store = createStore(abil_reducer);
 
 function mapStateToProps(state) {
     return {
-        abils: {
-            str: {
-                name: 'Strength',
-                score: 10
-            },
-            con: {
-                name: 'Constitution',
-                score: 10
-            },
-            int: {
-                name: 'Intelligence',
-                score: 10
-            },
-            dex: {
-                name: 'Dexterity',
-                score: 10
-            },
-            wis: {
-                name: 'Wisdom',
-                score: 10
-            },
-            cha: {
-                name: 'Charisma',
-                score: 10
-            }
-        }
+        abils: state.abils
     }
-
-
-
-
 }
 
 function mapDispatchToProps(dispatch) {
