@@ -10,7 +10,8 @@ const store = createStore(abil_reducer);
 
 function mapStateToProps(state) {
     return {
-        abils: state.abils
+        abils: state.abils,
+        levels: state.levels
     }
 }
 
