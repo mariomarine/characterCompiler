@@ -17,6 +17,12 @@ class Abils extends React.Component {
         });
         return points;
     }
+    getMod(score) {
+        console.log(score);
+        let mod = Math.floor(score / 2) - 5;
+        console.log(mod);
+        return mod;
+    }
     render() {
         var abilities = this.props.abils;
         var _this = this;
@@ -33,7 +39,8 @@ class Abils extends React.Component {
                                         <input type="number" min={1} max={20} name={key} value={abilities[key].score} onChange={(e) => _this.props.handleAbilChange(e.target)} />
                                         <input type="checkbox" name={key} checked={abilities[key].racial} onChange={(e) => _this.props.handleRacialChange(e.target)} />
                                         <input type="number" min={-10} max={10} name={key} value={abilities[key].bonus} onChange={(e) => _this.props.handleBonusChange(e.target)} />
-                                        <span className="total">{_this.getTotal(key)}</span>
+                                        <span className="total">{_this.getTotal(key)}</span> &nbsp;
+                                        <span className="mod">Mod: {_this.getMod(_this.getTotal(key))}</span>
                                     </label>
                                     <br />
                                 </div>
