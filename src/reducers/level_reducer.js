@@ -1,4 +1,4 @@
-var abil_reducer = function(state, action) {
+var level_reducer = function(state, action) {
     if (state == undefined) {
         var data = {
             abils: {},
@@ -8,15 +8,14 @@ var abil_reducer = function(state, action) {
     }
     var newState = state;
     switch(action.type) {
-        case 'update_abils':
+        case 'update_levels':
             var temp = {};
-            temp[action.abil] = Object.assign({}, state[action.abil], {score: action.newScore});
             console.log(state);
-            newState = Object.assign({}, state, temp);
+            newState = Object.assign({}, state, {level: action.level});
             break;
     }
     return newState;
 }
 
-export { abil_reducer }
+export { level_reducer }
 

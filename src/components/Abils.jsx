@@ -14,7 +14,9 @@ class Abils extends React.Component {
                                 <div key={index}>
                                     <label>
                                         {abilities[key].name}
-                                        <input type="number" name={key} value={abilities[key].score} onChange={(e) => _this.props.handleChange(e.target)} />
+                                        <input type="number" name={key} value={abilities[key].score} onChange={(e) => _this.props.handleAbilChange(e.target)} />
+                                        <input type="checkbox" name={key} checked={abilities[key].racial} onChange={(e) => _this.props.handleRacialChange(e.target)} />
+                                        <input type="number" name={key} value={abilities[key].bonus} onChange={(e) => _this.props.handleBonusChange(e.target)} />
                                     </label>
                                     <br />
                                 </div>

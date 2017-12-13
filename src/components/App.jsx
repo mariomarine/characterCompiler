@@ -6,16 +6,22 @@ class App extends React.Component {
     handleAbilChange(target) {
         this.props.updateAbils({type: 'update_abils', abil: target.name, newScore: target.value});
     }
+    handleRacialChange(target) {
+        this.props.updateAbils({type: 'update_racial', racial: target.value});
+    }
+    handleBonusChange(target) {
+        this.props.updateAbils({type: 'update_bonus', bonus: target.value});
+    }
     handleLevelChange(target) {
-        this.props.updateAbils({type: 'update_levels', level: target.value});
+        this.props.updateLevels({type: 'update_levels', level: target.value});
     }
     render() {
         var _this = this;
         return (
             <div>
                 <h1>Character Compiler</h1>
-                <Levels levels={_this.props.levels} handleChange={_this.handleLevelChange.bind(this)} />
-                <Abils abils={_this.props.abils} handleChange={_this.handleAbilChange.bind(this)} />
+                <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
+                <Abils abils={_this.props.abils} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
             </div>
         )
     }

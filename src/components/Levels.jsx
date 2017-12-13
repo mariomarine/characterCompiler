@@ -9,7 +9,7 @@ class Levels extends React.Component {
                 <form>
                     <label>
                         Level
-                        <input type="number" name="level" value={_this.props.levels.level} onChange={(e) => _this.props.handleChange(e.target)} />
+                        <input type="number" name="level" value={_this.props.levels.level} onChange={(e) => _this.props.handleLevelChange(e.target)} />
                     </label>
                     <br />
                 </form>
