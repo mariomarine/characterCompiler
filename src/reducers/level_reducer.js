@@ -10,7 +10,6 @@ var level_reducer = function(state, action) {
     switch(action.type) {
         case 'update_levels':
             var temp = {};
-            console.log(state);
             newState = Object.assign({}, state, {level: action.level});
             break;
     }

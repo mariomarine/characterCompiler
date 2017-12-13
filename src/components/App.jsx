@@ -7,10 +7,10 @@ class App extends React.Component {
         this.props.updateAbils({type: 'update_abils', abil: target.name, newScore: target.value});
     }
     handleRacialChange(target) {
-        this.props.updateAbils({type: 'update_racial', racial: target.value});
+        this.props.updateAbils({type: 'update_racial', abil: target.name, racial: target.checked});
     }
     handleBonusChange(target) {
-        this.props.updateAbils({type: 'update_bonus', bonus: target.value});
+        this.props.updateAbils({type: 'update_bonus', abil: target.name, bonus: target.value});
     }
     handleLevelChange(target) {
         this.props.updateLevels({type: 'update_levels', level: target.value});
