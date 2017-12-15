@@ -6,6 +6,19 @@ import { Provider, connect } from 'react-redux';
 import App from './components/App.jsx';
 import { abil_reducer } from './reducers/abil_reducer.js';
 import { level_reducer } from './reducers/level_reducer.js';
+import { firebase_key } from './resources/secrets.js';
+
+var firebase = require('firebase');
+// Initialize Firebase
+var config = {
+apiKey: firebase_key,
+authDomain: "character-compiler.firebaseapp.com",
+databaseURL: "https://character-compiler.firebaseio.com",
+projectId: "character-compiler",
+storageBucket: "",
+messagingSenderId: "732543137021"
+};
+firebase.initializeApp(config);
 
 const rootReducer = combineReducers({abils: abil_reducer, levels: level_reducer});
 var initial_state = {
@@ -58,7 +71,6 @@ var initial_state = {
         half_level: 0
     }
 }
-
 const store = createStore(rootReducer, initial_state);
 
 function mapStateToProps(state) {
