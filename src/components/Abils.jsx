@@ -11,16 +11,12 @@ class Abils extends React.Component {
     getPointsUsed(abils) {
         let points = 0;
         Object.keys(abils).map((key, index) => {
-            console.log(point_buy);
-            console.log(abils[key].score);
             points += point_buy[abils[key].score];
         });
         return points;
     }
     getMod(score) {
-        console.log(score);
         let mod = Math.floor(score / 2) - 5;
-        console.log(mod);
         return mod;
     }
     render() {
