@@ -1,6 +1,7 @@
 import React from 'react';
 import Abils from './Abils.jsx';
 import Levels from './Levels.jsx';
+import Login from './Login.jsx';
 
 class App extends React.Component {
     handleAbilChange(target) {
@@ -20,6 +21,7 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Character Compiler</h1>
+                <Login />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
                 <Abils abils={_this.props.abils} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
             </div>
