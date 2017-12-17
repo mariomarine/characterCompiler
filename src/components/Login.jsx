@@ -12,7 +12,7 @@ class Login extends React.Component {
         auth.signInWithPopup(provider)
             .then((result) => {
                 const user = result.user;
-                _this.props.updateUser({type: 'LOGIN', email: user.email});
+                _this.props.updateUser({type: 'LOGIN', user: user});
             }).catch((error) => {
                 console.log(error);
             });

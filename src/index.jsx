@@ -56,12 +56,12 @@ var initial_state = {
         }
     },
     levels: {
-        level: 1,
-        half_level: 0
+        level: 1
     },
     name: '',
     user: {
-        email: ''
+        email: '',
+        userId: ''
     }
 }
 const store = createStore(rootReducer, initial_state);
@@ -71,7 +71,8 @@ function mapStateToProps(state) {
         abils: state.abils,
         levels: state.levels,
         name: state.name,
-        user: state.user
+        user: state.user,
+        store: state
     }
 }
 

@@ -10,10 +10,12 @@ var user_reducer = function(state, action) {
     var newState = state;
     switch(action.type) {
         case 'LOGIN':
-            newState = Object.assign({}, state, {email: action.email});
+            newState = Object.assign({}, state, {email: action.user.email});
+            newState = Object.assign({}, newState, {userId: action.user.uid});
             break;
         case 'LOGOUT':
             newState = Object.assign({}, state, {email: ''});
+            newState = Object.assign({}, newState, {userId: ''});
             break;
     }
     return newState;

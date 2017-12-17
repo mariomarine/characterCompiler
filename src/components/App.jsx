@@ -3,6 +3,7 @@ import Abils from './Abils.jsx';
 import Levels from './Levels.jsx';
 import Login from './Login.jsx';
 import Name from './Name.jsx';
+import Menu from './Menu.jsx';
 
 class App extends React.Component {
     handleAbilChange(target) {
@@ -25,6 +26,7 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Character Compiler</h1>
+                <Menu state={_this.props.store} />
                 <Login user={_this.props.user} updateUser={_this.props.updateUser} />
                 <Name name={_this.props.name} handleNameChange={_this.handleNameChange.bind(this)} />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
