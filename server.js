@@ -9,7 +9,7 @@ app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
-app.set('port', 3000);
+app.set('port', 4144);
 
 app.use(express.static(path.join(__dirname, 'src')));
 
