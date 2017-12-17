@@ -58,7 +58,6 @@ var initial_state = {
         half_level: 0
     }
 }
-
 const store = createStore(rootReducer, initial_state);
 
 function mapStateToProps(state) {
