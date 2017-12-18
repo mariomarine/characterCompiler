@@ -12,6 +12,9 @@ var name_reducer = function(state, action) {
         case 'update_name':
             newState = action.name;
             break;
+        case 'SET_NAME':
+            newState = action.name;
+            break;
     }
     return newState;
 }

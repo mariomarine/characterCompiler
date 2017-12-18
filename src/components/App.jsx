@@ -19,14 +19,14 @@ class App extends React.Component {
         this.props.updateLevels({type: 'update_levels', level: target.value});
     }
     handleNameChange(target) {
-        this.props.updateUser({type: 'update_name', name: target.value});
+        this.props.updateName({type: 'update_name', name: target.value});
     }
     render() {
         var _this = this;
         return (
             <div>
                 <h1>Character Compiler</h1>
-                <Menu character_list={_this.props.character_list} state={_this.props.store} updateCharacterList={_this.props.updateCharacterList}/>
+                <Menu character_list={_this.props.character_list} state={_this.props.store} updateCharacterList={_this.props.updateCharacterList} updateAbils={_this.props.updateAbils} updateLevels={_this.props.updateLevels} updateName={_this.props.updateName} />
                 <Login user={_this.props.user} updateUser={_this.props.updateUser} />
                 <Name name={_this.props.name} handleNameChange={_this.handleNameChange.bind(this)} />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />

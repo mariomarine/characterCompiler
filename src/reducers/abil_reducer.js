@@ -23,6 +23,9 @@ var abil_reducer = function(state, action) {
             temp[action.abil] = Object.assign({}, state[action.abil], {bonus: action.bonus});
             newState = Object.assign({}, state, temp);
             break;
+        case 'SET_ABILS':
+            newState = action.abils;
+            break;
     }
     return newState;
 }

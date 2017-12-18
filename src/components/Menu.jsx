@@ -32,7 +32,7 @@ class Menu extends React.Component {
                 <button onClick={_this.save}>Save</button>
                 <button onClick={_this.showCharacters}>Load</button>
                 {_this.props.character_list.length > 0 ?
-                    <CharacterSelector character_list={_this.props.character_list} />
+                    <CharacterSelector updateAbils={_this.props.updateAbils} updateLevels={_this.props.updateLevels} updateName={_this.props.updateName} user={_this.props.state.user} character_list={_this.props.character_list} />
                     :
                     <p>Please select "Load"</p>
                 }

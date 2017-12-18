@@ -12,6 +12,9 @@ var level_reducer = function(state, action) {
             var temp = {};
             newState = Object.assign({}, state, {level: action.level});
             break;
+        case 'SET_LEVEL':
+            newState = action.levels;
+            break;
     }
     return newState;
 }
