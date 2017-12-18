@@ -9,6 +9,7 @@ import { level_reducer } from './reducers/level_reducer.js';
 import { name_reducer } from './reducers/name_reducer.js';
 import { user_reducer } from './reducers/user_reducer.js';
 import { character_list_reducer } from './reducers/character_list_reducer.js';
+import { initial_state } from './resources/initial_state.js';
 
 const rootReducer = combineReducers({
     abils: abil_reducer,
@@ -18,61 +19,6 @@ const rootReducer = combineReducers({
     character_list: character_list_reducer
 });
 
-var initial_state = {
-    abils: {
-        str: {
-            name: 'Strength',
-            score: 10,
-            racial: false,
-            bonus: 0,
-            mod: 0
-        },
-        con: {
-            name: 'Constitution',
-            score: 10,
-            racial: false,
-            bonus: 0,
-            mod: 0
-        },
-        int: {
-            name: 'Intelligence',
-            score: 10,
-            racial: false,
-            bonus: 0,
-            mod: 0
-        },
-        dex: {
-            name: 'Dexterity',
-            score: 10,
-            racial: false,
-            bonus: 0,
-            mod: 0
-        },
-        wis: {
-            name: 'Wisdom',
-            score: 10,
-            racial: false,
-            bonus: 0,
-            mod: 0
-        },
-        cha: {
-            name: 'Charisma',
-            score: 10,
-            racial: false,
-            bonus: 0,
-            mod: 0
-        }
-    },
-    levels: {
-        level: 1
-    },
-    name: '',
-    user: {
-        email: '',
-        userId: ''
-    },
-    character_list: []
-}
 const store = createStore(rootReducer, initial_state);
 
 function mapStateToProps(state) {
