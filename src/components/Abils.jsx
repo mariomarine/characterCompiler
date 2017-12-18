@@ -19,6 +19,36 @@ class Abils extends React.Component {
         let mod = Math.floor(score / 2) - 5;
         return mod;
     }
+    getBonusPointsUsed(abils) {
+        let points = 0;
+        Object.keys(abils).map((key, index) => {
+            points += parseInt(abils[key].bonus);
+        });
+        return points;
+    }
+    getTotalBonusPoints(level) {
+        let points = 0;
+        points += (level >= 4) ?
+                    (level >= 14) ?
+                        (level >= 24) ?
+                            6
+                        : 4
+                    : 2
+                : 0
+        points += (level >= 8) ?
+                    (level >= 18) ?
+                        (level >= 28) ?
+                            6
+                        : 4
+                    : 2
+                : 0
+        points += (level >= 11) ?
+                    (level >= 21) ?
+                        12
+                    : 6
+                : 0
+        return points;
+    }
     render() {
         var abilities = this.props.abils;
         var _this = this;
@@ -45,6 +75,7 @@ class Abils extends React.Component {
                     }
                 </form>
                 <p className='point_buy'>You have used {_this.getPointsUsed(abilities)}/80.</p>
+                <p className='bonus_points'>You have {_this.getBonusPointsUsed(abilities)}/{_this.getTotalBonusPoints(_this.props.level)}</p>
             </div>
         )
     }

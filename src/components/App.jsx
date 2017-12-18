@@ -30,7 +30,7 @@ class App extends React.Component {
                 <Login user={_this.props.user} updateUser={_this.props.updateUser} />
                 <Name name={_this.props.name} handleNameChange={_this.handleNameChange.bind(this)} />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
-                <Abils abils={_this.props.abils} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
+                <Abils abils={_this.props.abils} level={_this.props.levels.level} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
             </div>
         )
     }
