@@ -75,7 +75,7 @@ class Abils extends React.Component {
                     }
                 </form>
                 <p className='point_buy'>You have used {_this.getPointsUsed(abilities)}/80.</p>
-                <p className='bonus_points'>You have {_this.getBonusPointsUsed(abilities)}/{_this.getTotalBonusPoints(_this.props.level)}</p>
+                <p className='bonus_points'>You have {_this.getBonusPointsUsed(abilities)}/{_this.getTotalBonusPoints(_this.props.level)} Bonus Points.</p>
             </div>
         )
     }
