@@ -26,7 +26,7 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Character Compiler</h1>
-                <Menu state={_this.props.store} />
+                <Menu character_list={_this.props.character_list} state={_this.props.store} updateCharacterList={_this.props.updateCharacterList}/>
                 <Login user={_this.props.user} updateUser={_this.props.updateUser} />
                 <Name name={_this.props.name} handleNameChange={_this.handleNameChange.bind(this)} />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />

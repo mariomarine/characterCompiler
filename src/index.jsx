@@ -8,8 +8,16 @@ import { abil_reducer } from './reducers/abil_reducer.js';
 import { level_reducer } from './reducers/level_reducer.js';
 import { name_reducer } from './reducers/name_reducer.js';
 import { user_reducer } from './reducers/user_reducer.js';
+import { character_list_reducer } from './reducers/character_list_reducer.js';
 
-const rootReducer = combineReducers({abils: abil_reducer, levels: level_reducer, name: name_reducer, user: user_reducer});
+const rootReducer = combineReducers({
+    abils: abil_reducer,
+    levels: level_reducer,
+    name: name_reducer,
+    user: user_reducer,
+    character_list: character_list_reducer
+});
+
 var initial_state = {
     abils: {
         str: {
@@ -62,7 +70,8 @@ var initial_state = {
     user: {
         email: '',
         userId: ''
-    }
+    },
+    character_list: []
 }
 const store = createStore(rootReducer, initial_state);
 
@@ -72,7 +81,8 @@ function mapStateToProps(state) {
         levels: state.levels,
         name: state.name,
         user: state.user,
-        store: state
+        store: state,
+        character_list: state.character_list
     }
 }
 
@@ -81,7 +91,8 @@ function mapDispatchToProps(dispatch) {
         updateAbils: (abil_action) => dispatch(abil_action),
         updateLevels: (level_action) => dispatch(level_action),
         updateName: (name_action) => dispatch(name_action),
-        updateUser: (user_action) => dispatch(user_action)
+        updateUser: (user_action) => dispatch(user_action),
+        updateCharacterList: (character_action) => dispatch(character_action)
     }
 }
 
