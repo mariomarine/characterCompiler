@@ -10,12 +10,14 @@ import { name_reducer } from './reducers/name_reducer.js';
 import { user_reducer } from './reducers/user_reducer.js';
 import { character_list_reducer } from './reducers/character_list_reducer.js';
 import { initial_state } from './resources/initial_state.js';
+import { skill_reducer } from './reducers/skill_reducer.js';
 
 const rootReducer = combineReducers({
     abils: abil_reducer,
     levels: level_reducer,
     name: name_reducer,
     user: user_reducer,
+    skills: skill_reducer,
     character_list: character_list_reducer
 });
 
@@ -27,6 +29,7 @@ function mapStateToProps(state) {
         levels: state.levels,
         name: state.name,
         user: state.user,
+        skills: state.skills,
         store: state,
         character_list: state.character_list
     }
@@ -38,6 +41,7 @@ function mapDispatchToProps(dispatch) {
         updateLevels: (level_action) => dispatch(level_action),
         updateName: (name_action) => dispatch(name_action),
         updateUser: (user_action) => dispatch(user_action),
+        updateSkills: (skill_action) => dispatch(skill_action),
         updateCharacterList: (character_action) => dispatch(character_action)
     }
 }

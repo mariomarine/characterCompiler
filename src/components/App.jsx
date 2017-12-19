@@ -4,6 +4,7 @@ import Levels from './Levels.jsx';
 import Login from './Login.jsx';
 import Name from './Name.jsx';
 import Menu from './Menu.jsx';
+import Skills from './Skills.jsx';
 
 class App extends React.Component {
     handleAbilChange(target) {
@@ -21,6 +22,9 @@ class App extends React.Component {
     handleNameChange(target) {
         this.props.updateName({type: 'update_name', name: target.value});
     }
+    handleSkillChange(target) {
+        this.props.updateSkills({type: 'update_skill', name: target.name, newScore: target.value});
+    }
     render() {
         var _this = this;
         return (
@@ -31,6 +35,7 @@ class App extends React.Component {
                 <Name name={_this.props.name} handleNameChange={_this.handleNameChange.bind(this)} />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
                 <Abils abils={_this.props.abils} level={_this.props.levels.level} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
+                <Skills abils={_this.props.abils} skills={_this.props.skills} handleSkillChange={_this.handleSkillChange.bind(this)} />
             </div>
         )
     }
