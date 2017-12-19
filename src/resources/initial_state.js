@@ -135,5 +135,10 @@ export const initial_state = {
         will: {
             misc: 0
         },
+    },
+    equipment: {
+        selected_armor: {
+            name: 'cloth'
+        }
     }
 }

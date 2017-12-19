@@ -6,6 +6,7 @@ import Name from './Name.jsx';
 import Menu from './Menu.jsx';
 import Skills from './Skills.jsx';
 import Defenses from './Defenses.jsx';
+import Equipment from './Equipment.jsx';
 
 class App extends React.Component {
     handleAbilChange(target) {
@@ -29,6 +30,12 @@ class App extends React.Component {
     handleTrainedChange(target) {
         this.props.updateSkills({type: 'update_trained', skill: target.name, trained: target.checked});
     }
+    handleEquipmentChange(e) {
+        this.props.updateEquipment({type: 'update_equipment', equipment: e.target.value});
+    }
+    handleDefMiscChange(target) {
+        this.props.updateDefenses({type: 'update_defense_misc', defense: target.name, newScore: target.value});
+    }
     render() {
         var _this = this;
         return (
@@ -40,7 +47,8 @@ class App extends React.Component {
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
                 <Abils abils={_this.props.abils} level={_this.props.levels.level} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
                 <Skills level={_this.props.levels.level} abils={_this.props.abils} skills={_this.props.skills} handleSkillChange={_this.handleSkillChange.bind(this)} handleTrainedChange={this.handleTrainedChange.bind(this)} />
-                <Defenses level={_this.props.levels.level} abils={_this.props.abils} defenses={_this.props.defenses} />
+                <Equipment equipment={_this.props.equipment} handleEquipmentChange={_this.handleEquipmentChange.bind(this)} />
+                <Defenses equipment={_this.props.equipment} level={_this.props.levels.level} abils={_this.props.abils} defenses={_this.props.defenses} handleDefMiscChange={_this.handleDefMiscChange.bind(this)} />
             </div>
         )
     }
