@@ -54,55 +54,72 @@ export const initial_state = {
     character_list: [],
     skills: {
         acrobatics: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         arcana: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         athletics: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         bluff: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         diplomacy: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         dungeoneering: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         endurance: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         heal: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         history: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         insight: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         intimidate: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         nature: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         perception: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         religion: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         stealth: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         streetwise: {
-            score: 0
+            misc: 0,
+            trained: false
         },
         thievery: {
-            score: 0
+            misc: 0,
+            trained: false
         }
     }
 }

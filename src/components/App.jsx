@@ -25,6 +25,9 @@ class App extends React.Component {
     handleSkillChange(target) {
         this.props.updateSkills({type: 'update_skill', name: target.name, newScore: target.value});
     }
+    handleTrainedChange(target) {
+        this.props.updateSkills({type: 'update_trained', skill: target.name, trained: target.checked});
+    }
     render() {
         var _this = this;
         return (
@@ -35,7 +38,7 @@ class App extends React.Component {
                 <Name name={_this.props.name} handleNameChange={_this.handleNameChange.bind(this)} />
                 <Levels levels={_this.props.levels} handleLevelChange={_this.handleLevelChange.bind(this)} />
                 <Abils abils={_this.props.abils} level={_this.props.levels.level} handleAbilChange={_this.handleAbilChange.bind(this)} handleRacialChange={_this.handleRacialChange.bind(this)} handleBonusChange={_this.handleBonusChange.bind(this)} />
-                <Skills abils={_this.props.abils} skills={_this.props.skills} handleSkillChange={_this.handleSkillChange.bind(this)} />
+                <Skills abils={_this.props.abils} skills={_this.props.skills} handleSkillChange={_this.handleSkillChange.bind(this)} handleTrainedChange={this.handleTrainedChange.bind(this)} />
             </div>
         )
     }
