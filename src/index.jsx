@@ -11,6 +11,7 @@ import { user_reducer } from './reducers/user_reducer.js';
 import { character_list_reducer } from './reducers/character_list_reducer.js';
 import { initial_state } from './resources/initial_state.js';
 import { skill_reducer } from './reducers/skill_reducer.js';
+import { defense_reducer } from './reducers/defense_reducer.js';
 
 const rootReducer = combineReducers({
     abils: abil_reducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     name: name_reducer,
     user: user_reducer,
     skills: skill_reducer,
-    character_list: character_list_reducer
+    character_list: character_list_reducer,
+    defenses: defense_reducer
 });
 
 const store = createStore(rootReducer, initial_state);
@@ -31,7 +33,8 @@ function mapStateToProps(state) {
         user: state.user,
         skills: state.skills,
         store: state,
-        character_list: state.character_list
+        character_list: state.character_list,
+        defenses: state.defenses
     }
 }
 

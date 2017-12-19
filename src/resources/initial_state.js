@@ -121,5 +121,19 @@ export const initial_state = {
             misc: 0,
             trained: false
         }
+    },
+    defenses: {
+        ac: {
+            misc: 0
+        },
+        fort: {
+            misc: 0
+        },
+        ref: {
+            misc: 0
+        },
+        will: {
+            misc: 0
+        },
     }
 }
