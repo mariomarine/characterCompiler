@@ -1,6 +1,7 @@
 import React from 'react';
 import point_buy from '../resources/point_buy.js';
 import { skills } from '../resources/skills.js';
+import { armor } from '../resources/armor.js';
 
 class Skills extends React.Component {
     getAbilTotal(key) {
@@ -22,6 +23,7 @@ class Skills extends React.Component {
         let total = parseInt(this.props.skills[key].misc);
         total += parseInt(this.props.skills[key].trained ? 5 : 0);
         total += this.getSkillMod(key);
+        total += (skills[key].armor_pen) ? armor[this.props.equipment.selected_armor.name].check : 0;
         total += Math.floor(this.props.level / 2);
         return total;
     }
