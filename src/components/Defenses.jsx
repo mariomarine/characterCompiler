@@ -1,7 +1,13 @@
 import React from 'react';
 import { armor } from '../resources/armor.js';
+import Bonus from './Bonus.jsx';
 
 class Defenses extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {};
+        this.state.show = {};
+    }
     getAbilTotal(key) {
         let total = parseInt(this.props.abils[key].score);
         total += parseInt(this.props.abils[key].bonus);
@@ -31,8 +37,27 @@ class Defenses extends React.Component {
         } else { // will
             total += Math.max(wisMod, chaMod);
         }
-        total += parseInt(this.props.defenses[defense].misc);
+        total = this.props.defenses[defense].bonuses.reduce((total, b) => total + parseInt(b.bonus), total);
         return total;
+    }
+    showBonus(e) {
+        let defense = e.target.name;
+        this.setState((prevState, props) => {
+            let show_def = {};
+            show_def[defense] = true;
+            return Object.assign({}, prevState, {show: show_def});
+        });
+    }
+    hideBonus(e) {
+        let defense = e.target.name;
+        this.setState((prevState, props) => {
+            let show_def = {};
+            show_def[defense] = false;
+            return Object.assign({}, prevState, {show: show_def});
+        });
+    }
+    handleChange(target, index, defense) {
+        this.props.updateDefenses({type: 'update_defense_bonus_score', defense: defense, index: index, score: target.value});
     }
     render() {
         var defenses = this.props.defenses;
@@ -40,22 +65,38 @@ class Defenses extends React.Component {
         return (
             <div>
                 <h2>Defenses</h2>
-                <form>
-                    {
-                        Object.keys(defenses).map((key, index) => {
-                            return (
-                                <div key={index}>
-                                    <label>
-                                        <input disabled type="number" min={1} max={20} name={key} value={_this.getTotal(key)} />
-                                        {key}
-                                        <input type="number" min={-10} max={20} name={key} value={defenses[key].misc} onChange={(e) => _this.props.handleDefMiscChange(e.target)} />
-                                    </label>
-                                    <br />
-                                </div>
-                            )
-                        })
-                    }
-                </form>
+                {
+                    Object.keys(defenses).map((key, index) => {
+                        return (
+                            <div key={index}>
+                                <label>
+                                    <input disabled type="number" min={1} max={20} name={key} value={_this.getTotal(key)} />
+                                    {key}
+                                    {_this.state.show[key] ?
+                                        <div>
+                                            <button name={key} onClick={(e) => _this.hideBonus(e)}>Hide Bonuses</button>
+                                            {
+                                                defenses[key].bonuses.map((bonus, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <Bonus bonus={bonus} defense={key} index={index} handleChange={(e) => _this.handleChange(e.target, index, key)} updateDefenses={_this.props.updateDefenses} />
+                                                            <br />
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                    :
+                                        <div>
+                                            <button name={key} onClick={(e) => _this.showBonus(e)}>Show Bonuses</button>
+                                        </div>
+                                    }
+                                </label>
+                                <br />
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }

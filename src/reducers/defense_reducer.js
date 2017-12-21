@@ -9,9 +9,16 @@ var defense_reducer = function(state, action) {
     }
     var newState = state;
     switch(action.type) {
-        case 'update_defense_misc':
-            var temp = {};
-            temp[action.defense] = Object.assign({}, state[action.defense], {misc: action.newScore});
+        case 'update_defense_bonus_choice':
+            var temp = state;
+            temp[action.defense].bonuses[action.index] = Object.assign({}, state[action.defense].bonuses[action.index],
+                {name: action.bonus, bonus: state[action.defense].bonuses[action.index].bonus});
+            newState = Object.assign({}, state, temp);
+            break;
+        case 'update_defense_bonus_score':
+            var temp = state;
+            temp[action.defense].bonuses[action.index] = Object.assign({}, state[action.defense].bonuses[action.index],
+                {name: state[action.defense].bonuses[action.index].name, bonus: action.score});
             newState = Object.assign({}, state, temp);
             break;
         case 'SET_DEFENSES':

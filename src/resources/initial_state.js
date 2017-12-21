@@ -124,16 +124,36 @@ export const initial_state = {
     },
     defenses: {
         ac: {
-            misc: 0
+            bonuses: [
+                {
+                    name: 'Misc',
+                    bonus: 0
+                }
+            ]
         },
         fort: {
-            misc: 0
+            bonuses: [
+                {
+                    name: 'Misc',
+                    bonus: 0
+                }
+            ]
         },
         ref: {
-            misc: 0
+            bonuses: [
+                {
+                    name: 'Misc',
+                    bonus: 0
+                }
+            ]
         },
         will: {
-            misc: 0
+            bonuses: [
+                {
+                    name: 'Misc',
+                    bonus: 0
+                }
+            ]
         },
     },
     equipment: {
