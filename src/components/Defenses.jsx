@@ -85,6 +85,7 @@ class Defenses extends React.Component {
                                                     )
                                                 })
                                             }
+                                            <button value={key} onClick={(e) => {_this.props.updateDefenses({type: 'add_bonus_defense', defense: e.target.value})}}>Add Bonus</button>
                                         </div>
                                     :
                                         <div>
