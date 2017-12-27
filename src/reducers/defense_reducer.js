@@ -17,8 +17,6 @@ var defense_reducer = function(state, action) {
             break;
         case 'add_bonus_defense':
             var temp = {};
-            console.log(state);
-            console.log(action);
             temp[action.defense] = {bonuses: []};
             temp[action.defense].bonuses = state[action.defense].bonuses.slice();
             temp[action.defense].bonuses.push({name: 'Misc', bonus: 0});

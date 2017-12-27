@@ -1,6 +1,6 @@
 import React from 'react';
 import { armor } from '../resources/armor.js';
-import Bonus from './Bonus.jsx';
+import BonusWrapper from './BonusWrapper.jsx';
 
 class Defenses extends React.Component {
     constructor(props) {
@@ -79,7 +79,7 @@ class Defenses extends React.Component {
                                                 defenses[key].bonuses.map((bonus, index) => {
                                                     return (
                                                         <div key={index}>
-                                                            <Bonus bonus={bonus} defense={key} index={index} handleChange={(e) => _this.handleChange(e.target, index, key)} updateDefenses={_this.props.updateDefenses} />
+                                                            <BonusWrapper bonus={bonus} defense={key} index={index} handleChange={(e) => _this.handleChange(e.target, index, key)} updateDefenses={_this.props.updateDefenses} />
                                                             <br />
                                                         </div>
                                                     )
