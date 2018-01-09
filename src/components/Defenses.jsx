@@ -69,7 +69,7 @@ class Defenses extends React.Component {
                     Object.keys(defenses).map((key, index) => {
                         return (
                             <div key={index}>
-                                <label>
+                                <label >
                                     <input disabled type="number" min={1} max={20} name={key} value={_this.getTotal(key)} />
                                     {key}
                                     {_this.state.show[key] ?
@@ -79,7 +79,7 @@ class Defenses extends React.Component {
                                                 defenses[key].bonuses.map((bonus, index) => {
                                                     return (
                                                         <div key={index}>
-                                                            <BonusWrapper bonus={bonus} defense={key} index={index} handleChange={(e) => _this.handleChange(e.target, index, key)} updateDefenses={_this.props.updateDefenses} />
+                                                            <BonusWrapper defense={key} group={'defense'} bonus={bonus} index={index} handleChange={(e) => _this.handleChange(e.target, index, key)} updateDefenses={_this.props.updateDefenses} />
                                                             <br />
                                                         </div>
                                                     )

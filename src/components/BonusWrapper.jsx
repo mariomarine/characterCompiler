@@ -16,8 +16,7 @@ class BonusWrapper extends React.Component {
         return action;
     }
     handleSelect(e) {
-        this.props.updateDefenses(this.createAction('defense', this.props.index, e.target.value));
-        // this.props.updateDefenses({type: 'update_defense_bonus_choice', defense: this.props.defense, index: this.props.index, bonus: e.target.value});
+        this.props.updateDefenses(this.createAction(this.props.group, this.props.index, e.target.value));
     }
     render() {
         var _this = this;

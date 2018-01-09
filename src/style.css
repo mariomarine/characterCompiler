@@ -2,3 +2,20 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+input {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Abils */
+.abil {
+    display: grid;
+    grid-template-columns: 40px 100px 45px 45px 40px 40px;
+}
+
+/* Skills */
+.skill {
+    display: grid;
+    grid-template-columns: 40px 100px 40px 40px 40px 40px;
+}

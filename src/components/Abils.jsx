@@ -55,25 +55,35 @@ class Abils extends React.Component {
         return (
             <div>
                 <h2>Abils</h2>
-                <form>
+                <div>
+                    <div>
+                        <label className="abil">
+                            <span>Total</span>
+                            <span>Ability</span>
+                            <span>Score</span>
+                            <span>Racial</span>
+                            <span>Misc</span>
+                            <span>Mod</span>
+                        </label>
+                    </div>
                     {
                         Object.keys(abilities).map((key, index) => {
                             return (
                                 <div key={index}>
-                                    <label>
-                                        {abilities[key].name}
+                                    <label className="abil">
+                                        <span className="total">{_this.getTotal(key)}</span>
+                                        <span>{abilities[key].name}</span>
                                         <input type="number" min={1} max={20} name={key} value={abilities[key].score} onChange={(e) => _this.props.handleAbilChange(e.target)} />
                                         <input type="checkbox" name={key} checked={abilities[key].racial} onChange={(e) => _this.props.handleRacialChange(e.target)} />
                                         <input type="number" min={-10} max={10} name={key} value={abilities[key].bonus} onChange={(e) => _this.props.handleBonusChange(e.target)} />
-                                        <span className="total">{_this.getTotal(key)}</span> &nbsp;
-                                        <span className="mod">Mod: {_this.getMod(_this.getTotal(key))}</span>
+                                        <span className="mod">{_this.getMod(_this.getTotal(key))}</span>
                                     </label>
                                     <br />
                                 </div>
                             )
                         })
                     }
-                </form>
+                </div>
                 <p className='point_buy'>You have used {_this.getPointsUsed(abilities)}/80.</p>
                 <p className='bonus_points'>You have {_this.getBonusPointsUsed(abilities)}/{_this.getTotalBonusPoints(_this.props.level)} Bonus Points.</p>
             </div>

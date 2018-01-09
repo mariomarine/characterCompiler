@@ -34,14 +34,24 @@ class Skills extends React.Component {
         return (
             <div>
                 <h2>Skills</h2>
-                <form>
+                <div>
+                    <div>
+                        <label className="skill">
+                            <span>Total</span>
+                            <span>Skill</span>
+                            <span>Abil Mod</span>
+                            <span>1/2 Level</span>
+                            <span>Train</span>
+                            <span>Misc</span>
+                        </label>
+                    </div>
                     {
                         Object.keys(skills).map((skill, index) => {
                             return (
                                 <div key={index}>
-                                    <label>
+                                    <label className="skill">
                                         <input type="number" disabled min={-20} max={40} name={skill} value={_this.getTotal(skill)} />
-                                        {skill}
+                                        <span>{skill}</span>
                                         <input type="number" disabled min={-10} max={12} name={skill} value={_this.getSkillMod(skill)} />
                                         <input type="number" disabled min={0} max={15} name={skill} value={half_level} />
                                         <input type="checkbox" name={skill} checked={skills[skill].trained} onChange={(e) => _this.props.handleTrainedChange(e.target)} />
@@ -52,7 +62,7 @@ class Skills extends React.Component {
                             )
                         })
                     }
-                </form>
+                </div>
             </div>
         )
     }
